@@ -1,0 +1,24 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=86:E7:A3:DB:5E:18:AD:63:D7:3F:2A:7A:B6:79:5E:01:C1:A3:A9:2A%3Bcom.example.washeasier
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    com.example.washeasier
+
+    SHA-1 certificate fingerprint:
+    86:E7:A3:DB:5E:18:AD:63:D7:3F:2A:7A:B6:79:5E:01:C1:A3:A9:2A
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCEFc4PyQ2b7zj3FmX171b3XHvJSXZY2Yw</string>
+</resources>
