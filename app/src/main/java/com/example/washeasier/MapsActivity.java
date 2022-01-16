@@ -47,5 +47,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng elefanteAzul = new LatLng(37.75104229604585, -25.65657357685678);
         mMap.addMarker(new MarkerOptions().position(elefanteAzul).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(elefanteAzul,15f));
+
+
     }
 }
