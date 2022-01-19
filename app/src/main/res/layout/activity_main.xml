@@ -18,7 +18,7 @@
         android:text="Mostrar as Estações num raio de:"/>
 
     <RadioGroup
-        android:id="@+id/rdRaio"
+        android:id="@+id/rgRaio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lbEstacao"
@@ -26,31 +26,37 @@
         android:layout_marginTop="8dp"
         android:layout_marginLeft="16dp">
         <RadioButton
+            android:id="@+id/rb1km"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1 Km"
             android:textSize="18sp" />
         <RadioButton
+            android:id="@+id/rb5km"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5 Km"
             android:textSize="18sp" />
         <RadioButton
+            android:id="@+id/rb10km"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="10 Km"
             android:textSize="18sp" />
         <RadioButton
+            android:id="@+id/rb15km"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="15 Km"
             android:textSize="18sp" />
         <RadioButton
+            android:id="@+id/rb20km"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="20 Km"
             android:textSize="18sp" />
         <RadioButton
+            android:id="@+id/rbIlimitado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Ilimitado"
@@ -58,6 +64,7 @@
     </RadioGroup>
     
     <Button
+        android:id="@+id/btnMapa"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
