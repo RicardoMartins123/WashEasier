@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,14 +37,20 @@ public class MainActivity extends AppCompatActivity {
         radioButton20km=findViewById(R.id.rb20km);
         radioButtonIlimitado=findViewById(R.id.rbIlimitado);
 
+        btnMapa.setOnClickListener(v ->{
+            Intent intent= new Intent(this, MapsActivity.class);
+            startActivity(intent);
+        });
+
         if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
         }else{
             // Write you code here if permission already given.
-            btnMapa.setOnClickListener(v ->{
+
+            /*btnMapa.setOnClickListener(v ->{
                 Intent intent= new Intent(this, MapsActivity.class);
                 startActivity(intent);
-            });
+            });*/
         }
     }
 
