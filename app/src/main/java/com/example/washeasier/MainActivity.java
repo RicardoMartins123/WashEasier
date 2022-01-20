@@ -2,17 +2,19 @@ package com.example.washeasier;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     Button btnMapa;
     RadioGroup radioGroupRaio;
@@ -37,10 +39,6 @@ public class MainActivity extends AppCompatActivity {
         radioButton20km=findViewById(R.id.rb20km);
         radioButtonIlimitado=findViewById(R.id.rbIlimitado);
 
-        btnMapa.setOnClickListener(v ->{
-            Intent intent= new Intent(this, MapsActivity.class);
-            startActivity(intent);
-        });
 
         if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
@@ -53,5 +51,4 @@ public class MainActivity extends AppCompatActivity {
             });*/
         }
     }
-
 }
