@@ -62,12 +62,13 @@
             android:text="Ilimitado"
             android:textSize="18sp" />
     </RadioGroup>
-    
+
     <Button
         android:id="@+id/btnMapa"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_alignParentBottom="true"
-        android:text="Mostrar as Estações"/>
+        android:onClick="onClick"
+        android:text="Mostrar as Estações" />
 
 </RelativeLayout>
