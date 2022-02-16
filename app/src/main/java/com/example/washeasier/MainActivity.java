@@ -35,12 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
         btnMapa=findViewById(R.id.btnMapa);
 
-        if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED){
-            startActivity(new Intent(MainActivity.this, MapsActivity.class));
-            finish();
-            return;
-        }
-
         btnMapa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
                                 if(permissionDeniedResponse.isPermanentlyDenied()){
                                     AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
                                     builder.setTitle("Permission Denied")
-                                            .setMessage("Permission to acess device location is permanently denied. You need to go to settings to allow the permission.")
+                                            .setMessage("Permission to acess device location is permanently denied. " +
+                                                    "You need to go to settings to allow the permission.")
                                             .setNegativeButton("Cancel",null)
                                             .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                                                 @Override

@@ -55,12 +55,6 @@
             android:layout_height="wrap_content"
             android:text="20 Km"
             android:textSize="18sp" />
-        <RadioButton
-            android:id="@+id/rbIlimitado"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Ilimitado"
-            android:textSize="18sp" />
     </RadioGroup>
 
     <Button
