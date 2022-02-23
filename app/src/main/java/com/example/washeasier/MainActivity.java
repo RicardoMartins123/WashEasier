@@ -27,6 +27,7 @@ import com.karumi.dexter.listener.single.PermissionListener;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnMapa;
+    RadioGroup rg_raio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         btnMapa=findViewById(R.id.btnMapa);
+        rg_raio=findViewById(R.id.rgRaio);
 
         btnMapa.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,6 +45,18 @@ public class MainActivity extends AppCompatActivity {
                         .withListener(new PermissionListener() {
                             @Override
                             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
+
+                                rg_raio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                    @Override
+                                    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                                        switch (i){
+                                            case R.id.rb1km:startActivity(new Intent(MainActivity.this,MapsActivity.class));
+                                                finish();
+                                                break;
+                                        }
+                                    }
+                                });
+
                                 startActivity(new Intent(MainActivity.this,MapsActivity.class));
                                 finish();
                             }

@@ -17,6 +17,7 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
 import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
@@ -83,6 +84,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Places.initialize(MapsActivity.this,"AIzaSyCEFc4PyQ2b7zj3FmX171b3XHvJSXZY2Yw");
         placesClient=Places.createClient(this);
         AutocompleteSessionToken token= AutocompleteSessionToken.newInstance();
+
+        btnProcurar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
     @SuppressLint("MissingPermission")
