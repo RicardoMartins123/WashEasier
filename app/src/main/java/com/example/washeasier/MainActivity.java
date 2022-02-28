@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onPermissionGranted(PermissionGrantedResponse permissionGrantedResponse) {
 
-                                rg_raio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                                /*rg_raio.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                                     @Override
                                     public void onCheckedChanged(RadioGroup radioGroup, int i) {
                                         switch (i){
@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                                                 break;
                                         }
                                     }
-                                });
+                                });*/
 
                                 startActivity(new Intent(MainActivity.this,MapsActivity.class));
                                 finish();
