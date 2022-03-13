@@ -12,24 +12,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/search_bar"
-        android:queryHint="Procurar Estações..."
-        android:iconifiedByDefault="false"
-        android:layout_margin="10dp"
-        android:elevation="5dp"
-        android:background="@drawable/br_round"/>
-
-    <Button
-        android:id="@+id/btnProcurar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:backgroundTint="@android:color/holo_blue_dark"
-        android:layout_margin="16dp"
-        android:text="Encontrar Estações"
-        android:textStyle="bold" />
-
 </RelativeLayout>
