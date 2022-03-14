@@ -15,6 +15,8 @@ import android.content.IntentSender;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
@@ -54,8 +56,9 @@ import com.google.android.libraries.places.api.model.AutocompleteSessionToken;
 import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.maps.android.SphericalUtil;
 
+import java.io.IOException;
 import java.util.List;
-
+import java.util.Locale;
 
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
@@ -69,10 +72,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private Location mLastNowLocation;
     private LocationCallback locationCallback;
 
-    private SearchView searchView;
-
-    private LatLng myLocation;
-
+    LatLng myLocation;
+    String myLat;
+    String myLong;
     private float DEFAULT_ZOOM = 15f;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -82,8 +84,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         binding = ActivityMapsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        searchView=findViewById(R.id.search_bar);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -164,7 +164,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         List<Est_ServModel> listaEst_Serv = dataBaseHelper.getEst_Serv();
         List<ServicosModel> listaServicos = dataBaseHelper.getServicos();
 
-        LatLng myLocation = new LatLng(37.75359790506351, -25.647418920622727);
+        myLocation = new LatLng(37.74921230875358, -25.664910613967244);
 
         for(int i = 0; i < listaEstacao.size(); i++){
             LatLng estacaoLatlong = new LatLng(listaEstacao.get(i).getEstLat(), listaEstacao.get(i).getEstLong());
@@ -194,8 +194,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 "\nSimples - " + precoSimples +
                                 "\nEspecial - " + precoEspecial +
                                 "\nExtra - " + precoExtra ));
-
-
             }
         }
 
@@ -230,8 +228,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         });
     }
-
-
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
